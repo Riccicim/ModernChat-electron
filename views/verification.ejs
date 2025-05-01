@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doğrulama Kodu</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+            }
+          }
+        }
+      };
+    </script>
+
+    <style>
+      body {
+        background: linear-gradient(to bottom right, #1e3a8a, #0f172a);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 1s ease-out both;
+      }
+
+      input[type="text"]::-webkit-inner-spin-button,
+      input[type="text"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type="text"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen flex items-center justify-center font-poppins">
+    <div class="bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20 rounded-2xl p-8 w-full max-w-md text-white animate-fadeInUp">
+      <h2 class="text-3xl font-bold mb-4 text-center">Verification Code</h2>
+      <p class="text-center text-sm text-white/70 mb-6">Please enter the 6-digit code sent to your e-mail address.
+      </p>
+
+      <form class="space-y-6" action="#">
+        <div class="flex justify-between gap-2">
+          <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" />
+          <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" />
+          <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" />
+          <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" />
+          <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" />
+          <input type="text" maxlength="1" class="w-12 h-12 text-center text-xl rounded-lg bg-white/20 border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 py-2 rounded-lg text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl"
+        >
+        Verify Code
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-sm text-white/70">
+        Didn't receive the code?
+        <a href="#" class="text-blue-400 hover:underline">Resend</a>
+      </p>
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll('input[type="text"]');
+
+      inputs.forEach((input, index) => {
+        input.addEventListener('input', () => {
+          if (input.value.length === 1 && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+          }
+        });
+
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && input.value === '' && index > 0) {
+            inputs[index - 1].focus();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

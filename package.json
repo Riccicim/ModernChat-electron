@@ -1,0 +1,17 @@
+{
+  "name": "electron-express-ejs-template",
+  "version": "1.0.0",
+  "description": "A template or boilerplate for ElectronJS, ExpressJS, and EJS. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "electron": "^36.0.0"
+  }
+}

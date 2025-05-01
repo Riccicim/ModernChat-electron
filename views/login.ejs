@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Login</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind Config: Font Poppins -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background: linear-gradient(to bottom right, #1e3a8a, #0f172a);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 1s ease-out both;
+      }
+
+      .transition-input:focus {
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex items-center justify-center font-poppins">
+    <div class="bg-white/10 backdrop-blur-lg shadow-2xl border border-white/20 rounded-2xl p-8 w-full max-w-md text-white animate-fadeInUp">
+      <h2 class="text-3xl font-bold mb-6 text-center">Welcome Back</h2>
+
+      <form action="#" class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium mb-1" for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/60 text-white transform transition-input"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1" for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="w-full px-4 py-2 rounded-lg bg-white/20 border border-white/30 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/60 text-white transform transition-input"
+            placeholder="••••••••"
+          />
+        </div>
+
+        <div class="flex items-center justify-between text-sm">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" class="accent-blue-500" />
+            Remember me
+          </label>
+          <a href="#" class="text-blue-400 hover:underline">Forgot password?</a>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 py-2 rounded-lg text-white font-semibold shadow-lg hover:scale-105 hover:shadow-xl">
+          Sign In
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-sm text-white/70">
+        Don't have an account?
+        <a href="/register" class="text-blue-400 hover:underline">Sign up</a>
+      </p>
+    </div>
+  </body>
+</html>
